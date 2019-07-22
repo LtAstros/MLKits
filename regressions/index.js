@@ -15,10 +15,11 @@ const regression = new LinearRegression(features, labels, {
     iterations: 3,
     batchSize: 10
   });
-  
+  console.log("building")
+  regression.build();
+  console.log("training")
   regression.train();
-  const r2 = regression.test(testFeatures, testLabels);
-  
-  console.log('R2 is', r2);
-  
-  regression.predict([[120, 2, 380]]).print();
+  console.log("predicting")
+  regression.predict([[120, 2, 380]]);
+//   console.log("debugger")
+//   regression.debugger();
