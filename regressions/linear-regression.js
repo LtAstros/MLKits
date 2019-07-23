@@ -32,12 +32,7 @@ class LinearRegression {
       await this.model.fit(this.features, this.labels, {
          epochs: this.options.iterations,
          batchSize: this.options.batchSize,
-         callbacks: (batch, logs) => {
-            console.log('Accuracy', logs.acc);
-         }
-      }).then(info => {
-         console.log('Final accuracy', info.history.acc);
-      });
+      })
       await this.model.save('file://./ml-models');
   }
 
