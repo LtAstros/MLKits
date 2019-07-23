@@ -5,21 +5,21 @@ const LinearRegression = require('./linear-regression.js')
 
 let { features, labels, testFeatures, testLabels } = loadCSV('./cars.csv', {
     shuffle: true,
-    splitTest: 50,
+    splitTest: 0,
     dataColumns: ['horsepower', 'weight', 'displacement'],
     labelColumns: ['mpg'],
 });
 
 const regression = new LinearRegression(features, labels, {
     learningRate: 0.1,
-    iterations: 3,
+    iterations: 500,
     batchSize: 10
   });
-  console.log("building")
-  regression.build();
-  console.log("training")
-  regression.train();
-  console.log("predicting")
+  // regression.build();
+  // regression.train();
   regression.predict([[120, 2, 380]]);
-//   console.log("debugger")
-//   regression.debugger();
+
+/*
+  16.12,
+  
+*/
